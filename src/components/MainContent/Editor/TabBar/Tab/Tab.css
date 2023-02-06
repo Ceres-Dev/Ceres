@@ -1,0 +1,18 @@
+.Tab:hover .TabCloseBtn {
+  display: flex;
+  opacity: 1;
+}
+
+.TabCloseBtn {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.TabCloseBtn > img {
+  filter: brightness(0) saturate(100%) invert(60%) sepia(18%) saturate(220%) hue-rotate(180deg) brightness(90%) contrast(88%);
+}
+
+.TabCloseBtn:hover > img {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(3675%) hue-rotate(312deg) brightness(110%) contrast(65%);
+}

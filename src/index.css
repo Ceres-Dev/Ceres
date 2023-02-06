@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root {
+  /* --bgPrimary: #21252b; */
+  --bgPrimary: #FFFF;
+  --bgPrimaryBorder: #464952;
+  --bgSecondary: #282c34;
+  --fgPrimary: #878e9b;
+  --accent: #DC2626;
+  overflow: hidden;
+}
+
+@font-face {
+  font-family: 'Fira Code';
+  src: url(assets/fonts/FiraCode.ttf);
+}
+
+@font-face {
+  font-family: 'Consolas';
+  src: url(assets/fonts/ConsolasLigatures.ttf);
+}
+
+@font-face {
+  font-family: 'PoppinsNL';
+  src: url(assets/fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'PoppinsMD';
+  src: url(assets/fonts/Poppins-Medium.ttf);
+}
+
+@font-face {
+  font-family: 'PoppinsBD';
+  src: url(assets/fonts/Poppins-SemiBold.ttf);
+}
+
+.PoppinsNL {
+  font-family: 'PoppinsNL';
+}
+
+.PoppinsMD {
+  font-family: 'PoppinsMD';
+}
+
+.PoppinsBD {
+  font-family: 'PoppinsBD';
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-app-region: no-drag;
+  -webkit-user-select: none;
+  /* flex-shrink: 0; */
+}
+
+body {
+  background-color: #FFFF;
+  color: rgb(211, 211, 211, 0.9);
+  border: 1px solid #48545c;
+  overflow: hidden;
+}
+
+.draggable {
+  -webkit-app-region: drag;
+}
+
+.FiraCode {
+  font-family: 'Fira Code', monospace;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--bgPrimaryBorder);
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  background-clip: padding-box;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  border-left: 0;
+  border-right: 0;
+  border-radius: 0%;
+}

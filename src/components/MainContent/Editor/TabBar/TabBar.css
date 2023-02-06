@@ -1,0 +1,15 @@
+.TabBar::-webkit-scrollbar {
+  height: 4px;
+}
+
+.TabBar::-webkit-scrollbar-thumb {
+  background-color: var(--bgPrimaryBorder);
+  border-left: 0px solid transparent;
+  border-right: 0px solid transparent;
+  background-clip: padding-box;
+  border-radius: 3px;
+}
+
+.AddTabBtn > img {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(3675%) hue-rotate(312deg) brightness(110%) contrast(65%);
+}
