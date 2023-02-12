@@ -8,6 +8,9 @@ import ElectronStore from 'electron-store';
 
 // Modules
 import getColors from './getColors';
+import findFileExt from './findFileExt';
+import FileTree from './makeFileTree';
+import CopyWallpaper from './copyWallpaper';
 
 const winHeight = 800;
 const winWidth = 1300;
@@ -24,9 +27,10 @@ function createWindow(store: ElectronStore) {
     show: true,
     resizable: true,
     fullscreenable: true,
-    backgroundColor: '#FFF',
+    backgroundColor: '#131418',
     webPreferences: {
-      preload: join(__dirname, '../preload.js')
+      preload: join(__dirname, '../preload.js'),
+      webSecurity: false
     }
   });
   const port = process.env.PORT || 3000;
@@ -45,6 +49,22 @@ function createWindow(store: ElectronStore) {
 
   ipcMain.on('getAppColors', () => {
     getColors(store);
+  });
+
+  ipcMain.on('getFileType', (_event, path: string) => {
+    const fileType = findFileExt(path);
+    console.log(fileType);
+    win.webContents.send('setFileType', fileType);
+  });
+
+  ipcMain.on('makeFileTree', () => {
+    const fileTree = new FileTree('E:/Repos/Valence/Valence/main', 'Valence');
+    fileTree.build();
+    console.log(fileTree);
+  });
+
+  ipcMain.on('copyWallpaper', () => {
+    CopyWallpaper();
   });
 
   ipcMain.on('maxWin', () => {

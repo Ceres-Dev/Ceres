@@ -5,12 +5,16 @@ declare global {
     api: typeof API;
   }
 }
+
 interface Colors {
-  BgPrimary: string;
-  BgPrimaryBorder: string;
-  BgSecondary: string;
-  FgPrimary: string;
+  MainBackground: string;
+  Editor: string;
+  Titlebar: string;
+  Sidebar: string;
+  StatusBar: string;
   Accent: string;
+  Text: string;
+  Border_1: string;
 }
 
 const API = {
@@ -31,6 +35,19 @@ const API = {
   },
   setColors: (func: (event: IpcRendererEvent, colors: Colors) => void) => {
     ipcRenderer.on('appColors', (event, data) => func(event, data));
+  },
+
+  // Make File Tree
+  getFileTree: () => {
+    ipcRenderer.send('makeFileTree');
+  },
+
+  // Copy Wallpaper
+  copyWallpaper: () => {
+    ipcRenderer.send('copyWallpaper');
+  },
+  setWallpaperPath: (func: (event: IpcRendererEvent, path: string) => void) => {
+    ipcRenderer.on('setWallpaperPath', (event, path) => func(event, path));
   }
 };
 contextBridge.exposeInMainWorld('api', API);

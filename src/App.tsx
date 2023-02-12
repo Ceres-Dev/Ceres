@@ -1,26 +1,37 @@
 import React, { useEffect } from 'react';
-import MainContent from './components/MainContent/MainContent';
-import Titlebar from './components/Titlebar/Titlebar';
+import MainContent from './Components/MainContent/MainContent';
+import Sidebar from './Components/Sidebar/Sidebar';
 
 function App() {
   useEffect(() => {
     window.api.reqColors();
-    console.log('requested');
+    console.log('requested colors');
+  }, []);
+
+  useEffect(() => {
+    window.api.copyWallpaper();
   }, []);
 
   window.api.setColors((event, colors) => {
-    console.log(colors.BgPrimary);
     const root = document.getElementById('root');
-    root?.style.setProperty('--bgPrimary', colors.BgPrimary);
-    root?.style.setProperty('--bgPrimaryBorder', colors.BgPrimaryBorder);
-    root?.style.setProperty('--bgSecondary', colors.BgSecondary);
-    root?.style.setProperty('--fgPrimary', colors.FgPrimary);
-    root?.style.setProperty('--accent', colors.Accent);
+    root?.style.setProperty('--MainBackground', colors.MainBackground);
+    root?.style.setProperty('--Editor', colors.Editor);
+    root?.style.setProperty('--Sidebar', colors.Sidebar);
+    root?.style.setProperty('--StatusBar', colors.StatusBar);
+    root?.style.setProperty('--Titlebar', colors.Titlebar);
+    root?.style.setProperty('--Accent', colors.Accent);
+    root?.style.setProperty('--Text', colors.Text);
+    root?.style.setProperty('--Border_1', colors.Border_1);
+  });
+
+  window.api.setWallpaperPath((event, path) => {
+    console.log(path);
+    document.body.style.backgroundImage = `url(${path})`;
   });
 
   return (
-    <div className="flex flex-col h-screen w-screen text-[var(--fgPrimary)] bg-[var(--bgPrimary)] overflow-hidden">
-      <Titlebar />
+    <div className="flex h-screen w-screen text-[var(--Text)] bg-[var(--MainBackground)] overflow-hidden p-2">
+      <Sidebar />
       <MainContent />
     </div>
   );

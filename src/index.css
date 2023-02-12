@@ -2,19 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-#root {
-  /* --bgPrimary: #21252b; */
-  --bgPrimary: #FFFF;
-  --bgPrimaryBorder: #464952;
-  --bgSecondary: #282c34;
-  --fgPrimary: #878e9b;
-  --accent: #DC2626;
-  overflow: hidden;
-}
-
 @font-face {
-  font-family: 'Fira Code';
-  src: url(assets/fonts/FiraCode.ttf);
+  font-family: 'Manrope';
+  src: url(assets/fonts/Manrope.ttf);
 }
 
 @font-face {
@@ -37,6 +27,14 @@
   src: url(assets/fonts/Poppins-SemiBold.ttf);
 }
 
+.Consolas {
+  font-family: 'Consolas';
+}
+
+.Manrope {
+  font-family: 'Manrope';
+}
+
 .PoppinsNL {
   font-family: 'PoppinsNL';
 }
@@ -49,44 +47,60 @@
   font-family: 'PoppinsBD';
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   -webkit-app-region: no-drag;
   -webkit-user-select: none;
-  /* flex-shrink: 0; */
+}
+
+#root {
+  --MainBackground: #252525;
+  --Editor: #1e1e1e;
+  --Sidebar: #171719;
+  --StatusBar: #171719;
+  --Titlebar: #171719;
+  --Accent: #1D4ED8;
+  --Text: rgba(211, 211, 211, 0.96);
+  --Border1: #34363e;
+  --SidebarM: 8px;
+  --SidebarB: 1px;
+  --SidebarWidth: 300px;
+  --SidebarDisplay: flex;
+  --Scrollbar: #171719;
+  --SidebarOBTN: #131418;
+  overflow: hidden;
 }
 
 body {
-  background-color: #FFFF;
   color: rgb(211, 211, 211, 0.9);
-  border: 1px solid #48545c;
   overflow: hidden;
 }
 
 .draggable {
-  -webkit-app-region: drag;
+    -webkit-user-select: none;
+    -webkit-app-region: drag;
 }
 
-.FiraCode {
-  font-family: 'Fira Code', monospace;
+::-webkit-scrollbar-track {
+	border-radius: 10px;
+	background-color: transparent;
 }
 
 ::-webkit-scrollbar {
-  width: 12px;
+	width: 8px;
+	background-color: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--bgPrimaryBorder);
-  border-left: 4px solid transparent;
-  border-right: 4px solid transparent;
-  background-clip: padding-box;
-  border-radius: 3px;
+	background-color: var(--Scrollbar);
 }
 
-::-webkit-scrollbar-thumb:hover {
-  border-left: 0;
-  border-right: 0;
-  border-radius: 0%;
+.WhiteIcon {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(4%) saturate(2148%) hue-rotate(292deg) brightness(110%) contrast(65%);
 }

@@ -1,12 +1,14 @@
 import React from 'react';
 import Editor from './Editor/Editor';
-import Sidebar from './Sidebar/Sidebar';
+import StatusBar from './StatusBar/StatusBar';
+import TopBar from './TopBar/TopBar';
 
 function MainContent() {
   return (
-    <div className="w-screen h-full flex bg-[var(--bgSecondary)] relative overflow-hidden">
-      <Sidebar />
+    <div className="w-full h-full flex flex-col overflow-hidden">
+      <TopBar />
       <Editor />
+      <StatusBar />
     </div>
   );
 }

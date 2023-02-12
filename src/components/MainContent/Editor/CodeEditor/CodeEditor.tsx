@@ -1,47 +1,37 @@
-import React, { useEffect } from 'react';
-import MonacoEditor, { useMonaco } from '@monaco-editor/react';
+import React, { useState, useEffect } from 'react';
+import './CodeEditor.css';
+import CodeMirror from '@uiw/react-codemirror';
+import { javascript } from '@codemirror/lang-javascript';
+import { atomone } from '@uiw/codemirror-theme-atomone';
 
 function CodeEditor() {
-  const monaco = useMonaco();
+  const onChange = React.useCallback((value) => {
+    console.log('value:', value);
+  }, []);
 
-  useEffect(() => {
-    if (monaco) {
-      import('./themes/Valence.json').then((data: any) => {
-        monaco.editor.defineTheme('valence', data);
-        monaco.editor.setTheme('valence');
-      });
-    }
-  }, [monaco]);
+  const [editorHeight, setEditorHeight] = useState('');
+  const [editorWidth, setEditorWidth] = useState('');
+
+  function updateEditorSize() {
+    const root = document.getElementById('root');
+    setEditorHeight(`calc(100vh - 106px)`);
+    setEditorWidth(`calc(100vw - ${root?.getAttribute('--SidebarWidth')})`);
+  }
+
+  useEffect(() => updateEditorSize(), []);
+
+  console.log(editorHeight);
+  console.log(editorWidth);
 
   return (
-    <div className="w-full h-full flex">
-      <MonacoEditor
-        height="100%"
-        width="100%"
-        language="typescript"
-        theme="valence"
-        value={`const hello = "hello world";\nconsole.log(hello);`}
-        options={{
-          cursorBlinking: 'phase',
-          cursorSmoothCaretAnimation: true,
-          cursorStyle: 'line',
-          fontFamily: 'Consolas',
-          fontLigatures: true,
-          autoClosingBrackets: 'always',
-          autoClosingDelete: 'auto',
-          autoIndent: 'full',
-          autoClosingQuotes: 'always',
-          formatOnPaste: true,
-          formatOnType: true,
-          linkedEditing: true,
-          tabSize: 2,
-          smoothScrolling: true,
-          'semanticHighlighting.enabled': 'configuredByTheme',
-          minimap: {
-            enabled: false
-          },
-          mouseWheelScrollSensitivity: 1.2
-        }}
+    <div className="w-full h-full Codemirror" id="Editor">
+      <CodeMirror
+        value="console.log('hello world!');"
+        height={editorHeight}
+        width={editorWidth}
+        extensions={[javascript({ jsx: true })]}
+        onChange={onChange}
+        theme={atomone}
       />
     </div>
   );

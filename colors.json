@@ -1,7 +1,10 @@
 {
-  "BgPrimary": "#131418",
-  "BgPrimaryBorder": "#464952",
-  "BgSecondary": "#282c34",
-  "FgPrimary": "rgb(211, 211, 211, 0.9)",
-  "Accent": "#1D4ED8"
+  "MainBackground": "rgba(37, 37, 37, 0.85)",
+  "Editor": "#131418",
+  "Titlebar": "#131418",
+  "Sidebar": "#131418",
+  "StatusBar": "#131418",
+  "Accent": "#1D4ED8",
+  "Text": "rgba(211, 211, 211, 0.95)",
+  "Border_1": "#34363e"
 }
