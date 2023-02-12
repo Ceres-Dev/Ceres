@@ -104,7 +104,7 @@ This project is licensed under the MIT Licence. Read [LICENSE](https://github.co
 
 # Acknowledgments
 
-Here I have included some of the resources I have use in the development of this project
+Here I have included some of the resources I have used in the development of this project
 
 - Template - [Maximilian Stümpfl](https://www.github.com/maxstue)'s [Vite React TypeScript Electron Starter](https://www.github.com/maxstue/vite-reactts-electron-starter) Boilerplate
 - React-CodeMirror - [uiw](https://github.com/uiwjs)
