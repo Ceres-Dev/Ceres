@@ -28,7 +28,7 @@ I wanted to start from scratch. And that's how Project Valence was born. It is c
 - Vite
 - TypeScript
 - Tailwind CSS
-- CodeMirror Editor
+- CodeMirror
 - Prettier
 - ESLint
 - Concurrently
@@ -94,10 +94,13 @@ This project is licensed under the MIT Licence. Read [LICENSE](https://github.co
 
 # Contact
 
-Anant Narayan - [anantnrg@gmail.com](mailto:anantnrg@gmail.com)
-Project Repository - [https://github.com/Valence-Dev/Valence](https://github.com/Valence-Dev/Valence)
-Project Site - [https://valence-dev.github.io](https://valence-dev.github.io)
-Project Organization - [https://github.com/Valence-Dev](https://github.com/Valence-Dev)
+- Anant Narayan - [anantnrg@gmail.com](mailto:anantnrg@gmail.com)
+
+- Project Repository - [https://github.com/Valence-Dev/Valence](https://github.com/Valence-Dev/Valence)
+
+- Project Site - [https://valence-dev.github.io](https://valence-dev.github.io)
+
+- Project Organization - [https://github.com/Valence-Dev](https://github.com/Valence-Dev)
 
 # Acknowledgments
 
