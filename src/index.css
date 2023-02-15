@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Manrope';
-  src: url(assets/fonts/Manrope.ttf);
+  font-family: 'JetBrains Mono';
+  src: url(assets/fonts/JetBrainsMono.ttf);
 }
 
 @font-face {
@@ -27,12 +27,17 @@
   src: url(assets/fonts/Poppins-SemiBold.ttf);
 }
 
+@font-face {
+  font-family: 'FW';
+  src: url(assets/fonts/FontAwesome.ttf);
+}
+
 .Consolas {
   font-family: 'Consolas';
 }
 
-.Manrope {
-  font-family: 'Manrope';
+.JetBrains {
+  font-family: 'JetBrains Mono';
 }
 
 .PoppinsNL {
@@ -57,6 +62,7 @@ html {
   box-sizing: border-box;
   -webkit-app-region: no-drag;
   -webkit-user-select: none;
+  animation: none !important;
 }
 
 #root {
@@ -72,7 +78,7 @@ html {
   --SidebarB: 1px;
   --SidebarWidth: 300px;
   --SidebarDisplay: flex;
-  --Scrollbar: #171719;
+  --Scrollbar: #34363e;
   --SidebarOBTN: #131418;
   overflow: hidden;
 }
@@ -80,25 +86,12 @@ html {
 body {
   color: rgb(211, 211, 211, 0.9);
   overflow: hidden;
+  background-size: cover;
 }
 
 .draggable {
     -webkit-user-select: none;
     -webkit-app-region: drag;
-}
-
-::-webkit-scrollbar-track {
-	border-radius: 10px;
-	background-color: transparent;
-}
-
-::-webkit-scrollbar {
-	width: 8px;
-	background-color: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-	background-color: var(--Scrollbar);
 }
 
 .WhiteIcon {

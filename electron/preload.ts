@@ -48,6 +48,14 @@ const API = {
   },
   setWallpaperPath: (func: (event: IpcRendererEvent, path: string) => void) => {
     ipcRenderer.on('setWallpaperPath', (event, path) => func(event, path));
+  },
+
+  // Splash
+  setLoading: (func: (event: IpcRendererEvent, value: boolean) => void) => {
+    ipcRenderer.on('setLoading', (event, value) => func(event, value));
+  },
+  setLoadingText: (func: (event: IpcRendererEvent, text: string) => void) => {
+    ipcRenderer.on('setLoadingText', (event, text) => func(event, text));
   }
 };
 contextBridge.exposeInMainWorld('api', API);

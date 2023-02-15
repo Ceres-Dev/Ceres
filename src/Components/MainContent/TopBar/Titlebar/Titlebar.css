@@ -1,9 +1,0 @@
-.title {
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.MaxBtn:hover {
-  box-shadow: 0 0 15 15 #36C84B; 
-}

@@ -71,6 +71,7 @@ npm run dist
 - [x] Add CodeMirror
 - [x] Update UI
 - [ ] Add File Explorer
+- [ ] Add multiple tabs support
 - [ ] Build for MacOS and Linux amd64
 
 # Contributing

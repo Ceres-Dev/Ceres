@@ -1,0 +1,41 @@
+.Sidebar {
+  transition: width 150ms;
+  border: var(--SidebarB) solid var(--Border1);
+}
+
+.SidebarHidden > *:not(.sbCollapseBtn) {
+  display: none;
+}
+
+.Sidebar::before {
+  width: 45px;
+  height: calc(100vh - 32px);
+}
+
+.Sidebar:hover .sbCollapseBtn {
+  opacity: 1;
+  border-top: solid 1px var(--Border1);
+  border-right: solid 1px var(--Border1);
+  border-bottom: solid 1px var(--Border1);
+}
+
+.sbCollapseBtn {
+  top: calc(50% - 32px);
+  border-radius: 0px 40px 40px 00px;
+  left: 100%;
+  opacity: 0;
+  transition: opacity 0.2s;
+  border-top: solid 1px var(--Border1);
+  border-right: solid 1px var(--Border1);
+  border-bottom: solid 1px var(--Border1);
+}
+
+.sbCollapseBtn > img {
+  transition:  transform .2s ease-in-out;
+  filter: invert(81%) sepia(5%) saturate(0%) hue-rotate(288deg) brightness(90%) contrast(95%);
+  color: #bababa;
+}
+
+#SidebarContextMenu.visible {
+  display: block;
+}

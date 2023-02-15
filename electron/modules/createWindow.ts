@@ -9,8 +9,8 @@ import ElectronStore from 'electron-store';
 // Modules
 import getColors from './getColors';
 import findFileExt from './findFileExt';
-import FileTree from './makeFileTree';
 import CopyWallpaper from './copyWallpaper';
+import getFileTree from './getFileTree';
 
 const winHeight = 800;
 const winWidth = 1300;
@@ -58,9 +58,16 @@ function createWindow(store: ElectronStore) {
   });
 
   ipcMain.on('makeFileTree', () => {
-    const fileTree = new FileTree('E:/Repos/Valence/Valence/main', 'Valence');
-    fileTree.build();
-    console.log(fileTree);
+    win.webContents.send('setLoadingText', 'Loading project');
+    const path = 'C:/TestFolder';
+    getFileTree(path);
+    win.webContents.send('setLoadingText', 'Loading editor');
+    setTimeout(() => {
+      win.webContents.send('setLoadingText', 'Loading icons');
+    }, 1500);
+    setTimeout(() => {
+      win.webContents.send('setLoading', false);
+    }, 3000);
   });
 
   ipcMain.on('copyWallpaper', () => {

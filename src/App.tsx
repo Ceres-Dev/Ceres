@@ -1,8 +1,11 @@
-import React, { useEffect } from 'react';
-import MainContent from './Components/MainContent/MainContent';
-import Sidebar from './Components/Sidebar/Sidebar';
+import React, { useEffect, useState } from 'react';
+import MainWindow from './Components/MainWindow/MainContent';
+import Splash from './Components/Splash/Splash';
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+  const [loadingText, setLoadingText] = useState('Loading Valence');
+
   useEffect(() => {
     window.api.reqColors();
     console.log('requested colors');
@@ -10,6 +13,10 @@ function App() {
 
   useEffect(() => {
     window.api.copyWallpaper();
+  }, []);
+
+  useEffect(() => {
+    window.api.getFileTree();
   }, []);
 
   window.api.setColors((event, colors) => {
@@ -21,7 +28,7 @@ function App() {
     root?.style.setProperty('--Titlebar', colors.Titlebar);
     root?.style.setProperty('--Accent', colors.Accent);
     root?.style.setProperty('--Text', colors.Text);
-    root?.style.setProperty('--Border_1', colors.Border_1);
+    root?.style.setProperty('--Border1', colors.Border_1);
   });
 
   window.api.setWallpaperPath((event, path) => {
@@ -29,12 +36,13 @@ function App() {
     document.body.style.backgroundImage = `url(${path})`;
   });
 
-  return (
-    <div className="flex h-screen w-screen text-[var(--Text)] bg-[var(--MainBackground)] overflow-hidden p-2">
-      <Sidebar />
-      <MainContent />
-    </div>
-  );
+  window.api.setLoading(() => {
+    console.log('splash finished');
+    setIsLoading(false);
+  });
+  window.api.setLoadingText((event, text) => setLoadingText(text));
+
+  return isLoading ? <Splash splashText={loadingText} /> : <MainWindow />;
 }
 
 export default App;
