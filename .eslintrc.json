@@ -58,7 +58,7 @@
             "extensions": [".js", ".jsx", ".ts", ".tsx"]
           }
         },
-        "import/core-modules": [ "electron", "electron-is-dev" ]
+        "import/core-modules": [ "tauri"]
     },
     "ignorePatterns": ["node_modules/", "dist/", "main/"]
 }

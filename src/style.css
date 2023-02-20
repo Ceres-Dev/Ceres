@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: transparent;
+}
+
+#root {
+  border-radius: 10px;
+  background-color: #131418;
+  border: 1px solid var(--Border1);
+  overflow: hidden;
+  
+  width: 100vw;
+  height: 100vh;
+}
