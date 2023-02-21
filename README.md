@@ -23,7 +23,7 @@ I wanted to start from scratch. And that's how Project Valence was born. It is c
 
 ## Built With
 
-- Electron
+- ~~*Electron*~~ **Tauri**
 - React
 - Vite
 - TypeScript
@@ -70,6 +70,7 @@ npm run dist
 
 - [x] Add CodeMirror
 - [x] Update UI
+- [x] Switch to Tauri
 - [ ] Add File Explorer
 - [ ] Add multiple tabs support
 - [ ] Build for MacOS and Linux amd64
@@ -107,6 +108,6 @@ This project is licensed under the MIT Licence. Read [LICENSE](https://github.co
 
 Here I have included some of the resources I have used in the development of this project
 
-- Template - [Maximilian Stümpfl](https://www.github.com/maxstue)'s [Vite React TypeScript Electron Starter](https://www.github.com/maxstue/vite-reactts-electron-starter) Boilerplate
+- ~~*Template - [Maximilian Stümpfl](https://www.github.com/maxstue)'s [Vite React TypeScript Electron Starter](https://www.github.com/maxstue/vite-reactts-electron-starter) Boilerplate*~~
 - React-CodeMirror - [uiw](https://github.com/uiwjs)
 - ReadME Template - [Othneil Drew](https://github.com/othneildrew/Best-README-Template/)
